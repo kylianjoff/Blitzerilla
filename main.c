@@ -3,8 +3,8 @@
 #include <stdbool.h>
 #include <string.h>
 
-#include "lib/SDL2.h"
-#include "lib/input.h"
+#include "./lib/SDL2.h"
+#include "./lib/input.h"
 
 void create_window() {
     if(!SDL2_create_window("[NOM]")) {

@@ -1,7 +1,10 @@
 CC = gcc
 CFLAGS = -Wall -Wextra -g
 LDFLAGS = -lSDL2 -lSDL2_ttf -lSDL2_image -lm -lcjson
-SRC = $(wildcard *.c)
+
+# Définir les dossiers source
+SRCDIR = . lib
+SRC = $(foreach dir,$(SRCDIR),$(wildcard $(dir)/*.c))
 OBJ = $(SRC:.c=.o)
 EXEC = Blitzerilla
 
