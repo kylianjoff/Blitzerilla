@@ -27,5 +27,21 @@ void create_window() {
 }
 
 int main() {
+    create_window();
+
+    while(continuer) {
+        input_update();
+        SDL_GetWindowSize(window, &width, &height);
+
+        SDL2_clear((palette_t){0, 0, 0, 255});
+
+        SDL2_RenderPresent();
+
+        SDL_Delay(16);
+        continuer = false;
+    }
+
+    SDL2_cleanup();
+
     return 0;
 }
