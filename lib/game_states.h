@@ -11,7 +11,8 @@ typedef enum {
     STATE_CHARACTER_SELECT,
     STATE_LEVEL_SELECT,
     STATE_SETTINGS,
-    STATE_GAME
+    STATE_GAME,
+    STATE_QUIT
 } GameState;
 
 // Structure principale du contexte de jeu
