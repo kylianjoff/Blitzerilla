@@ -6,6 +6,7 @@
 #include "./lib/SDL2.h"
 #include "./lib/input.h"
 #include "./lib/game_states.h"
+#include "./lib/start.h"
 
 void create_window() {
     if(!SDL2_create_window("[NOM]")) {
@@ -30,7 +31,7 @@ void create_window() {
 void cleanup_current_state() {
     switch (g_context.current_state) {
         case STATE_START:
-            //start_cleanup();
+            start_cleanup();
             break;
         case STATE_MAIN_MENU:
             //menu_cleanup();
@@ -58,7 +59,7 @@ void cleanup_current_state() {
 void init_new_state() {
     switch (g_context.current_state) {
         case STATE_START:
-            //start_init();
+            start_init();
             break;
         case STATE_MAIN_MENU:
             //menu_init();
@@ -112,6 +113,8 @@ int main() {
 
         switch(g_context.current_state) {
             case STATE_START:
+                start_update();
+                start_render();
                 break;
             case STATE_MAIN_MENU:
                 break;
